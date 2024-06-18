@@ -3,15 +3,22 @@ export type Team = {
   name: string;
 };
 
-export type Match = {
+export type PastMatch = {
   name: string;
   date: string;
   teams: number[] | Team[];
   score: number[];
 };
 
+export type Match = {
+  name: string;
+  date: string;
+  teams: number[] | Team[];
+};
+
 export type Database = {
-  matches: Match[];
+  past_matches: PastMatch[];
+  next_matches: Match[];
   teams: Team[];
   pools: [];
   finals: [];

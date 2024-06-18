@@ -1,5 +1,5 @@
 {
-  "matches": [
+  "past_matches": [
     {
       "name": "Quart de finale n°1",
       "date": "1718706600000",
@@ -11,38 +11,39 @@
       "date": "1718707800000",
       "teams": [7, 5],
       "score": [1, 2]
-    },
+    }
+  ],
+  "next_matches": [
     {
       "name": "Quart de finale n°3",
       "date": "1718879400000",
-      "teams": [1, 10],
-      "score": []
+      "teams": [1, 10]
     },
     {
       "name": "Quart de finale n°4",
       "date": "1718880600000",
-      "teams": [8, 6],
-      "score": []
+      "teams": [8, 6]
     },
     {
       "name": "Demi finale n°1",
       "date": "1719225000000",
-      "teams": [3, 5],
-      "score": []
+      "teams": [3, 5]
     },
     {
       "name": "Demi finale n°2",
       "date": "1719226200000",
-      "teams": [],
-      "score": []
+      "teams": []
     },
     {
       "name": "Petite finale",
       "date": "1719312300000",
-      "teams": [],
-      "score": []
+      "teams": []
     },
-    { "name": "Finale", "date": "1719485100000", "teams": [], "score": [] }
+    {
+      "name": "Finale",
+      "date": "1719485100000",
+      "teams": []
+    }
   ],
   "teams": [
     {

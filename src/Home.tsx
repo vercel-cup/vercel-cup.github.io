@@ -19,11 +19,10 @@ function Home() {
     async function fetchData() {
       const response = await fetch("./database.json");
       const json = (await response.json()) as Database;
-      json.matches[0].teams = json.matches[0].teams.map(
+      json.next_matches[0].teams = json.next_matches[0].teams.map(
         (teamId) => json.teams.find((team) => team.id === teamId) as Team,
       );
-      console.log(json.matches[0]);
-      setNextMatch(json.matches[0]);
+      setNextMatch(json.next_matches[0]);
     }
 
     if (nextMatch == null) {
