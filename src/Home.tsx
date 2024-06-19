@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   Card,
   CardTitle,
@@ -6,49 +5,37 @@ import {
   CardContent,
   CardDescription,
 } from "~/components/ui/card";
-import { Database, Match, Team } from "./lib/data";
+
+import { matchProgram, teams } from "~/lib/data.ts";
 
 function Home() {
-  const [nextMatch, setNextMatch] = useState(null as null | Match);
   const dtf = new Intl.DateTimeFormat("fr", {
     dateStyle: "full",
     timeStyle: "short",
   });
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("./database.json");
-      const json = (await response.json()) as Database;
-      json.next_matches[0].teams = json.next_matches[0].teams.map(
-        (teamId) => json.teams.find((team) => team.id === teamId) as Team,
-      );
-      setNextMatch(json.next_matches[0]);
-    }
-
-    if (nextMatch == null) {
-      fetchData();
-    }
-  });
+  const nextMatch = matchProgram[0];
+  const nextMatchTeams = nextMatch.teams.map((teamId) => teams[teamId]);
 
   return (
     <div className="container flex flex-auto flex-col items-center justify-center gap-4">
-      {nextMatch != null && (
-        <>
-          <p className="text-2xl font-bold">Prochain match</p>
-          <Card className="w-[20rem]">
-            <CardHeader>
-              <CardTitle>{nextMatch.name}</CardTitle>
-              <CardDescription>
-                {dtf.format(parseInt(nextMatch.date))}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {(nextMatch.teams[0] as Team).name} <hr />
-              {(nextMatch.teams[1] as Team).name}
-            </CardContent>
-          </Card>
-        </>
-      )}
+      <p className="text-2xl font-bold">Prochain match</p>
+      <Card className="w-[20rem]">
+        <CardHeader>
+          <CardTitle>{nextMatch.name}</CardTitle>
+          <CardDescription>{dtf.format(nextMatch.date)}</CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-col divide-y">
+          {nextMatchTeams.map((team) => {
+            return (
+              <div className="flex gap-2 align-top">
+                <img className="h-4 rounded" src={team.icon} />
+                <span>{team.name}</span>
+              </div>
+            );
+          })}
+        </CardContent>
+      </Card>
     </div>
   );
 }
