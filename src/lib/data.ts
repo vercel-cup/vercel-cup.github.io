@@ -79,20 +79,22 @@ export const matchHistory: {
     date: new Date(1718707800000),
     teams: [7, 5],
     score: [1, 2],
-  },
-];
-
-export const matchProgram: { name: string; date: Date; teams: number[] }[] = [
+  },  
   {
     name: "Quart de finale n°3",
-    date: new Date(1718879400000),
+    date: new Date(1718880600000),
     teams: [1, 10],
+    score: [2, 0]
   },
   {
     name: "Quart de finale n°4",
-    date: new Date(1718880600000),
+    date: new Date(1718879400000),
     teams: [8, 6],
-  },
+    score: [3, 5]
+  }
+];
+
+export const matchProgram: { name: string; date: Date; teams: number[] }[] = [
   {
     name: "Demi finale n°1",
     date: new Date(1719225000000),
@@ -101,7 +103,7 @@ export const matchProgram: { name: string; date: Date; teams: number[] }[] = [
   {
     name: "Demi finale n°2",
     date: new Date(1719226200000),
-    teams: [],
+    teams: [1, 6],
   },
   {
     name: "Petite finale",
