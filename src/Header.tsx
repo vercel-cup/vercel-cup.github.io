@@ -2,7 +2,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 function Header() {
   return (
-    <header className="container flex-initial py-4 shadow-md">
+    <header className="container flex-none py-4 shadow-md">
       <div className="flex justify-between">
         <div>
           <h1 className="text-3xl font-extrabold md:text-4xl">Vercel Cup</h1>
@@ -10,7 +10,7 @@ function Header() {
             Du 13 mai au 27 juin 2024
           </h2>
         </div>
-        <button className="4xl">
+        <button>
           <HamburgerMenuIcon width={32} height={32}></HamburgerMenuIcon>
         </button>
       </div>

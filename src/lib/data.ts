@@ -98,7 +98,7 @@ export const matchProgram: { name: string; date: Date; teams: number[] }[] = [
   {
     name: "Demi finale n°1",
     date: new Date(1719225000000),
-    teams: [3, 5],
+    teams: [0, 5],
   },
   {
     name: "Demi finale n°2",
